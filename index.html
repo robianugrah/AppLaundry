@@ -5,40 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ANUGRAH LAUNDRY</title>
   <link rel="stylesheet" href="gaya.css">
-
 </head>
 <body>
 
   <div id="app">
     <h1>ANUGRAH LAUNDRY</h1>
 
-    <div>
+    <!-- Log In Form -->
+    <div id="logInForm">
+      <h2>Log In</h2>
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+      </div>
+
+      <button onclick="logIn()">Log In</button>
+    </div>
+
+    <!-- Laundry Order Form -->
+    <div id="orderForm" style="display: none;">
       <label for="nama">Nama Pelanggan:</label>
       <input type="text" id="nama">
-    </div>
 
-    <div>
       <label for="jenisLaundry">Jenis Laundry:</label>
       <select id="jenisLaundry">
-        <option value="cuci">Cuci baju</option>
-        <option value="cuci">Cuci celana</option>
+        <option value="cuciBaju">Cuci Baju</option>
+        <option value="cuciCelana">Cuci Celana</option>
         <option value="setrika">Setrika</option>
       </select>
-    </div>
 
-    <div>
       <label for="tanggal">Tanggal Pengambilan:</label>
       <input type="date" id="tanggal">
+
+      <button onclick="tambahPesanan()">Tambah Pesanan</button>
+
+      <h2>Daftar Pesanan</h2>
+      <ul id="daftarPesanan"></ul>
     </div>
-
-    <button onclick="tambahPesanan()">Tambah Pesanan</button>
-
-    <h2>Daftar Pesanan</h2>
-    <ul id="daftarPesanan"></ul>
   </div>
 
   <script src="kode.js"></script>
   <script src="regis.js"></script>
   <script src="service-worker.js"></script>
+
+  <script>
+    function logIn() {
+      // Dummy log in logic
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'admin' && password === 'admin') {
+        // Log in successful, show order form and hide log in form
+        document.getElementById('logInForm').style.display = 'none';
+        document.getElementById('orderForm').style.display = 'block';
+      } else {
+        alert('Log in failed. Please check your username and password.');
+      }
+    }
+  </script>
 </body>
 </html>
