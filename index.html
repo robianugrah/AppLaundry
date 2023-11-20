@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANUGRAH LAUNDRY</title>
+  <link rel="stylesheet" href="gaya.css">
+
+</head>
+<body>
+
+  <div id="app">
+    <h1>ANUGRAH LAUNDRY</h1>
+
+    <div>
+      <label for="nama">Nama Pelanggan:</label>
+      <input type="text" id="nama">
+    </div>
+
+    <div>
+      <label for="jenisLaundry">Jenis Laundry:</label>
+      <select id="jenisLaundry">
+        <option value="cuci">Cuci baju</option>
+        <option value="cuci">Cuci celana</option>
+        <option value="setrika">Setrika</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="tanggal">Tanggal Pengambilan:</label>
+      <input type="date" id="tanggal">
+    </div>
+
+    <button onclick="tambahPesanan()">Tambah Pesanan</button>
+
+    <h2>Daftar Pesanan</h2>
+    <ul id="daftarPesanan"></ul>
+  </div>
+
+  <script src="kode.js"></script>
+  <script src="regis.js"></script>
+  <script src="service-worker.js"></script>
+</body>
+</html>
